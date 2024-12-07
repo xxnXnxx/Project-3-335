@@ -2,33 +2,51 @@
 Ian Gabriel Vista
 vistaiangabriel@csu.fullerton.edu
 
-## To run Exhaustive Search algorithm
-Prepare the Grid (F): The grid should be represented as a 2D list, where:
+## Exhaustive Search Algorithm
+### Code Execution Steps
+1. Save the code as a Python file (e.g., exhaustive_search.py).
+2. Ensure you have Python installed on your system (version 3.x).
+3. Open a terminal or command prompt in the directory containing the file.
+4. Run the following command: python exhaustive_search.py
+5. The program will prompt you to input the grid dimensions and obstacle layout. Follow the instructions to input:
+* Grid Dimensions: The number of rows and columns.
+* Grid Layout: Represent passable cells with . and impassable cells with X.
+#### Example Input:
+Enter the number of rows in the grid: 3
 
-* 'X' indicates an impassable cell (blocked by an opponent).
-* '.' indicates a passable cell. The Red Team starts at (0, 0) and aims to reach the goal at (r-1, c-1).
-* Define the Function: The soccer_exhaustive function needs to be defined in your Python script or environment.
+Enter the number of columns in the grid: 3
 
-Run the Function: Pass the grid (F) to the soccer_exhaustive function to calculate the number of valid paths.
+Enter the grid with 3 rows, using '0' for open spaces and 'X' for obstacles:
 
-## Steps for Dynamic Programming:
-Grid Representation (F): Similar to the exhaustive search, the grid will be represented as a 2D list where:
+Row 1: 0 0 0
 
-* 'X' indicates an impassable cell (blocked by an opponent).
-* '.' indicates a passable cell. The Red Team starts at (0, 0) and aims to reach (r-1, c-1).
-Dynamic Programming Matrix (A):
+Row 2: 0 X 0
 
-The DP matrix A will store the number of valid paths to each cell.
-A[i][j] represents the number of ways to reach the cell (i, j) from the start (0, 0) while avoiding opponents ('X' cells).
-Base Case:
+Row 3: 0 0 0
 
-If the start (0, 0) is blocked ('X'), return 0 immediately.
-Set A[0][0] = 1 as there's only one way to start: standing at (0, 0).
-Recurrence Relation:
+#### Output:
+The program will display the total number of valid paths from the top-left corner to the bottom-right corner, avoiding obstacles.
 
-For each cell (i, j), the number of paths to that cell is the sum of:
-The number of paths from the cell above (i-1, j) if that cell is valid and not blocked.
-The number of paths from the cell to the left (i, j-1) if that cell is valid and not blocked.
-Final Answer:
+## Dynamic Programming Algorithm
+### Code Execution Steps
+1. Save the code as a Python file (e.g., dynamic_programming.py).
+2. Ensure you have Python installed on your system (version 3.x).
+3. Open a terminal or command prompt in the directory containing the file.
+4. Run the following command: python dynamic_programming.py
+5. The program will prompt you to input the grid dimensions and obstacle layout. Follow the same instructions as for the exhaustive search algorithm.
+#### Example Input:
+Enter the number of rows in the grid: 3
 
-The number of valid paths to the goal cell (r-1, c-1) will be stored in A[r-1][c-1].
+Enter the number of columns in the grid: 3
+
+Enter the grid with 3 rows, using '0' for open spaces and 'X' for obstacles:
+
+Row 1: 0 0 0
+
+Row 2: 0 0 0
+
+Row 3: 0 0 0
+
+#### Output:
+The program will display the total number of valid paths from the top-left corner to the bottom-right corner, avoiding obstacles.
+
